@@ -1,0 +1,133 @@
+"==========================================
+" Author: wandx.yw
+" Version: 0.1
+" Email: ywwithpeople@gmail.com
+" Desc: my ideavim config file
+"==========================================
+
+""" Map leader to space ---------------------
+let mapleader = " "
+
+""" Common settings -------------------------
+set scrolloff=4
+set showmode
+set number
+set history=2000
+set clipboard+=unnamed    " 共享系统粘贴板
+" 中英文自动切换
+set keep-english-in-normal-and-restore-in-insert
+" searching.
+set incsearch
+set hlsearch
+set smartcase
+set ignorecase
+
+""" Plugins  --------------------------------
+set surround
+set commentary
+set easymotion
+set multiple-cursors
+set ReplaceWithRegister
+
+
+""" Mappings ---------------------------------------------------------------------------
+" easymotion
+map f <Plug>(easymotion-s)
+
+" copy and paste
+nnoremap <leader>y "*y
+nnoremap <leader>p "*p
+nnoremap Y y$
+
+" Move half page faster
+nnoremap <leader>d  <C-d>
+nnoremap <leader>u  <C-u>
+
+" basic key mapping
+nnoremap L $
+vnoremap H ^
+nnoremap H ^
+vnoremap L $
+
+" clear the highlighted search result
+nnoremap <leader>/ :nohlsearch<CR>
+
+" 标签跳
+nnoremap J gT
+nnoremap K gt
+" Redo
+nnoremap U <C-r>
+" source
+nnoremap <leader>si    <Esc>:source ~/.ideavimrc <CR>
+
+" Insert mode shortcut
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+inoremap jk <esc>
+" 行尾加;并换行
+inoremap <Alt>;<CR> <Esc>A;<CR>
+" 行尾加;不换行
+inoremap <Alt>;; <Esc>A;
+
+" ***********************映射idea常用快捷键******************************
+" 文件操作
+nnoremap <leader>nf   :action NewFile<CR>
+nnoremap <leader>fp   :action FindInPath<CR>
+nnoremap <leader>rf   :action RenameFile<CR>
+nnoremap <leader>re   :action RenameElement<CR>
+nnoremap <leader>sfp  :action ShowFilePath<CR>
+nnoremap <leader>rcf  :action RecentChangedFiles<CR>
+
+" Quit
+nnoremap <leader>cp :action CloseProject<CR>
+nnoremap <leader>Q  :qa!<CR>
+nnoremap <leader>q  :wq<CR>
+nnoremap <leader>d  :q<CR>
+
+" run and debug
+nnoremap <leader>crc         :action ChooseRunConfiguration<CR>
+nnoremap <leader>db          :action Debug<CR>
+nnoremap <leader>r<leader>   :action Run<CR>
+nnoremap <leader>rr          :action Rerun<CR>f
+
+" code editing
+nnoremap == :<C-u>action ReformatCode<CR>
+vnoremap == :<C-u>action ReformatCode<CR>
+" nnoremap \i :<C-u>action OptimizeImports<CR>
+" vnoremap \i :<C-u>action OptimizeImports<CR>
+nnoremap q  :<C-u>action ShowIntentionActions<CR>
+nnoremap -- :<C-u>action CommentByLineComment<CR>
+vnoremap -- :<C-u>action CommentByLineComment<CR>
+
+" 搜索文件相关
+nnoremap <leader>sbm  :action ShowBookmarks<CR>
+nnoremap <leader>sct  :action ShelvedChangesToolbar<CR>
+nnoremap <leader>rtw  :action ActivateRunToolWindow<CR>
+nnoremap <leader>ttw  :action ActivateTODOToolWindow<CR>
+nnoremap <leader>dtw  :action ActivateDebugToolWindow<CR>
+nnoremap <leader>ptw  :action ActivateProjectToolWindow<CR>
+nnoremap <leader>vct  :action ActivateVersconControlToolWindow<CR>
+
+" 代码跳转相关
+" 不用leader的话g没有任何意义，所以必须要加leader
+nnoremap <leader>af  :action Forward<CR>
+nnoremap <leader>ab  :action Back<CR>
+nnoremap <leader>eci :action EditorContextInfo<CR>
+nnoremap <leader>fsp :action FileStructurePopup<CR>
+
+" 查找相关
+" nnoremap <leader>gt  :action GotoTest<CR>                       " 创建测试
+nnoremap <leader>gf  :action GotoFile<CR>                       " 查找文件
+nnoremap <leader>gc  :action GotoClass<CR>                      " 查找类
+nnoremap <leader>ga  :action GotoAction<CR>                     " 创建动作
+nnoremap <leader>gs  :action GotoSymbol<CR>                     " 查找符号
+nnoremap <leader>gd  :action GotoDeclaration<CR>                " 查找定义
+nnoremap <leader>gi  :action GotoImplementation<CR>             " 查找引用
+nnoremap <leader>se  :action SearchEverywhere<CR>
+" 窗口管理相关
+nnoremap <leader>wf :action HideAllWindows<CR>
+nnoremap <leader>wF :action ToggleFullScreen<CR>
+
+" *******************************************************************
