@@ -3,10 +3,8 @@ return {
   -- Add plugins, the lazy syntax
   {
     "p00f/clangd_extensions.nvim",
+    lazy = false,
     dependencies = { "williamboman/mason-lspconfig.nvim" },
-    ft = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-    opts =  {
-        ensure_installed = { "clangd" }, -- automatically install lsp
-      },
+    config = function() require("clangd_extensions").setup() end,
   },
 }

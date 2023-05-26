@@ -23,7 +23,6 @@ return {
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
         -- "prettier",
         "stylua", -- formatter lua
-        "clang-format", --formatter c/c++
         "black", -- formatter python
       })
     end,

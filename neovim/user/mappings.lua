@@ -18,6 +18,9 @@ return {
     ["H"] = { "^" },
     ["L"] = { "$" },
 
+    -- lsp
+    ["<leader>fm"] = {"<cmd>lua vim.lsp.buf.format()<CR>"},
+
     -- windows manage
     ["sv"] = { "<cmd>vsp<cr>" },
     ["sh"] = { "<cmd>sp<cr>" },
