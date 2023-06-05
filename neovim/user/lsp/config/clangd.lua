@@ -1,13 +1,11 @@
 return {
   capabilities = {
-    offsetEncoding = "utf-8",
-    -- offsetEncoding = "utf-32",
+    offsetEncoding = "utf-16",
     memoryUsageProvider = true,
   },
   filetypes = { "c", "cpp", "cuda", "objc", "objcpp", "opencl" },
   init_options = {
     clangdFileStatus = true, -- Provides information about activity on clangd’s per-file worker thread
-    -- TODO: figure out what is this
     usePlaceholders = true,
     completeUnimported = true,
     semanticHighlighting = true,
@@ -23,10 +21,11 @@ return {
     "--clang-tidy",
     "--completion-style=detailed",
     "--cross-file-rename",
+    "--log=verbose",
     "--pretty",
     "--compile-commands-dir=build",
     "-j=12",
-    "--query-driver=clang++",
+    "--query-driver=D:\\ToolChains\\LLVM-mingw\\bin\\g++",
     "--all-scopes-completion",
   },
 }
