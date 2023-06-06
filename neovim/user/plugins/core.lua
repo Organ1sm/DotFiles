@@ -8,4 +8,13 @@ return {
       return opts
     end,
   },
+
+  {
+    "akinsho/toggleterm.nvim",
+    opts = function(_, opts)
+      return require("astronvim.utils").extend_tbl(opts, {
+        shell = require("user.utils").getShell,
+      })
+    end,
+  },
 }
