@@ -2,8 +2,6 @@ return {
   {
     "CRAG666/code_runner.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    keys = {
-    },
     config = {
       -- choose default mode (valid term, tab, float, toggle, buf)
       mode = "term",
@@ -17,6 +15,7 @@ return {
         -- window size, this option is ignored if tab is true
         size = 8,
       },
+
       float = {
         -- Key that close the code_runner floating window
         close_key = "q",
