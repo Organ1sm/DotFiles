@@ -36,7 +36,10 @@ return {
     ["]e"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next diagnostic" },
     ["gp"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
     ["gt"] = { "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
-    ["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", desc = " lspsaga lsp finder" },
+    ["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", desc = "Lspsaga lsp finder" },
+
+    -- comment generate
+    ["<leader>ng"] = { ":lua require('neogen').generate()<CR>", desc = "Comment Generate" },
 
     -- CMake
     ["<leader>c"] = { desc = "CMake" },
