@@ -1,12 +1,12 @@
 return {
   {
     "p00f/clangd_extensions.nvim",
-    ft = { "c", "cpp"},
+    ft = { "c", "cpp" },
     event = "VeryLazy",
     dependencies = { "williamboman/mason-lspconfig.nvim" },
     config = function()
       require("clangd_extensions").setup {
-        server = require("astronvim.utils.lsp").config("clangd"),
+        server = require("astronvim.utils.lsp").config "clangd",
         extensions = {
           autoSetHints = true,
           -- These apply to the default ClangdSetInlayHints command

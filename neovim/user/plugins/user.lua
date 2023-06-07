@@ -10,14 +10,22 @@ return {
     event = "BufRead",
     config = function() require("neoscroll").setup() end,
   },
+
   -- {
   --   "ggandor/leap.nvim",
   --   config = function() require("user.leap").config() end,
-  -- },{
+  -- },
+
   {
     "danymat/neogen",
     lazy = true,
     dependencies = "nvim-treesitter/nvim-treesitter",
     config = true,
+  },
+
+  {
+    "j-hui/fidget.nvim",
+    event = "BufRead",
+    config = function() require("fidget").setup() end,
   },
 }

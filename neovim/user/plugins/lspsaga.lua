@@ -23,7 +23,7 @@ return {
         text_hl_follow = false,
       },
       -- finder icons
-      finder_icons = { def = "  ", ref = "󰵚 ", link = "󰴜 " },
+      finder_icons = { def = "stevearc/overseer.nvim", "  ", ref = "󰵚 ", link = "󰴜 " },
       request_timeout = 3000,
     },
   },
