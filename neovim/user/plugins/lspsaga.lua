@@ -6,8 +6,6 @@ return {
       ui = {
         -- Border type can be single, double, rounded, solid, shadow.
         border = "rounded",
-        preview = " ",
-        diagnostic = "🐞",
         incoming = "󰏷 ",
         outgoing = "󰏻 ",
       },

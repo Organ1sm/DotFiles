@@ -36,6 +36,7 @@ return {
     ["]e"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next diagnostic" },
     ["gp"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
     ["gt"] = { "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
+    ["gh"] = { "<cmd>Lspsaga lsp_finder<CR>", desc = " lspsaga lsp finder" },
 
     -- CMake
     ["<leader>c"] = { desc = "CMake" },
