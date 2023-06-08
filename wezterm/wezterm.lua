@@ -28,8 +28,7 @@ local config = {
 		bottom = 0,
 	},
 
-	-- default_cursor_style = "SteadyUnderline",
-	default_cursor_style = "SteadyBar",
+	default_cursor_style = "SteadyUnderline",
 	window_background_opacity = 0.95,
 	adjust_window_size_when_changing_font_size = true,
 	hide_tab_bar_if_only_one_tab = true,

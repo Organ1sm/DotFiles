@@ -1,6 +1,7 @@
 return {
   {
     "p00f/clangd_extensions.nvim",
+    init = function() table.insert(astronvim.lsp.skip_setup, "clangd") end,
     ft = { "c", "cpp" },
     event = "VeryLazy",
     dependencies = { "williamboman/mason-lspconfig.nvim" },

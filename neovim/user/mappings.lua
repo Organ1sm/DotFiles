@@ -26,6 +26,7 @@ return {
 
     -- buffer
     ["<A-c>"] = { function() require("astronvim.utils.buffer").close() end },
+    ["<leader><Tab>"] = { "<cmd>bnext<CR>", desc = "Next buffer" },
 
     -- neotree
     ["<leader>e"] = false,
@@ -62,6 +63,7 @@ return {
     ["<leader>rf"] = { "<cmd>RunFile<cr>", desc = "Run File" },
     ["<leader>rp"] = { "<cmd>RunProject<cr>", desc = "Run Project" },
     ["<leader>rd"] = { "<cmd>RunClose<cr>", desc = "Run Close" },
+
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
@@ -69,6 +71,9 @@ return {
   v = {
     ["H"] = { "^" },
     ["L"] = { "$" },
+
+    -- Refactor
+    ["<leader>rr"] = { ":lua require('refactoring').select_refactor()<CR>", desc = "Select Refactor" },
   },
 
   t = {},
