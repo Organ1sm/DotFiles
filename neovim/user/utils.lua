@@ -1,5 +1,6 @@
 local M = {}
 local Job = require "plenary.job"
+local scan = require "plenary.scandir"
 
 M.isWindows = vim.fn.has "win32" == 1 or vim.fn.has "win64" == 1
 
@@ -31,6 +32,19 @@ function M.get_files_by_end(string) --> table
     end
   end
   return files
+end
+
+local contains = function(tbl, str)
+  for _, v in ipairs(tbl) do
+    if v == str then return true end
+  end
+  return false
+end
+
+--- Check if a path
+M.exists = function(dir, file_pattern)
+  local dirs = scan.scan_dir(dir, { depth = 1, search_pattern = file_pattern })
+  return contains(dirs, dir .. "/" .. file_pattern)
 end
 
 return M
