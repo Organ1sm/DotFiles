@@ -7,7 +7,7 @@ return {
       return opts
     end,
   },
-
+  { "mfussenegger/nvim-dap", enabled = true },
   {
     "akinsho/toggleterm.nvim",
     opts = function(_, opts)
