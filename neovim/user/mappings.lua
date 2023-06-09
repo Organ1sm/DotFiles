@@ -1,3 +1,5 @@
+local get_icons = require("astronvim.utils").get_icon
+
 return {
   -- first key is the mode
   n = {
@@ -43,7 +45,7 @@ return {
     ["<leader>ng"] = { ":lua require('neogen').generate()<CR>", desc = "Comment Generate" },
 
     -- CMake
-    ["<leader>c"] = { desc = "CMake" },
+    ["<leader>c"] = { desc = get_icons("CMake", 1, true) .. "CMake" },
     ["<leader>cb"] = { "<cmd>CMakeBuild<CR>", desc = "Build" },
     ["<leader>cc"] = { "<cmd>CMakeClean<CR>", desc = "Clean target" },
     ["<leader>cd"] = { "<cmd>CMakeDebug<CR>", desc = "Debug" },
@@ -58,7 +60,7 @@ return {
     ["<leader>cz"] = { "<cmd>CMakeClose<CR>", desc = "Close console" },
 
     -- Code Runner
-    ["<leader>r"] = { desc = "Runner" },
+    ["<leader>r"] = { desc = get_icons("Runner", 1, true) .. "Runner" },
     ["<leader>rc"] = { "<cmd>RunCode<cr>", desc = "Run Code" },
     ["<leader>rf"] = { "<cmd>RunFile<cr>", desc = "Run File" },
     ["<leader>rp"] = { "<cmd>RunProject<cr>", desc = "Run Project" },
