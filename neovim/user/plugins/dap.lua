@@ -20,18 +20,15 @@ return {
       program = function() -- First, check if exists CMakeLists.txt
         local cwd = vim.fn.getcwd()
         if require("user.utils").exists(cwd, "CMakeLists.txt") then
-          -- Then invoke cmake commands
-          -- Then ask user to provide execute file
           return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
         else
+          os.execute("mkdir " .. "bin") -- create this directory
+
           local fileName = vim.fn.expand "%:t:r"
-          -- create this directory
-          os.execute("mkdir " .. "bin")
           local cmd = "!g++ -g % -o bin/" .. fileName
-          -- First, compile it
-          vim.cmd(cmd)
-          -- Then, return it
-          return "${fileDirname}/bin/" .. fileName
+          vim.cmd(cmd) -- First, compile it
+
+          return "${fileDirname}/bin/" .. fileName -- Then, return it
         end
       end,
 

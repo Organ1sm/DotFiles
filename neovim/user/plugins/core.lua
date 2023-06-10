@@ -1,12 +1,11 @@
 return {
-  -- customize alpha options
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      opts.section.header.val = require "user.header"
-      return opts
-    end,
-  },
+  -- {
+  --   "goolord/alpha-nvim",
+  --   opts = function(_, opts)
+  --     opts.section.header.val = require "user.header"
+  --     return opts
+  --   end,
+  -- },
   { "mfussenegger/nvim-dap", enabled = true },
   {
     "akinsho/toggleterm.nvim",

@@ -6,8 +6,9 @@ return {
     spell = false, -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
     wrap = false, -- sets vim.opt.wrap
-    guifont = "JetBrainsMono Nerd Font,Symbols Nerd Font Mono:h11",
+    guifont = "JetBrainsMono Nerd Font,Symbols Nerd Font Mono, Fira Code Nerd Font,:h11",
   },
+
   g = {
     mapleader = " ", -- sets vim.g.mapleader
     autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
