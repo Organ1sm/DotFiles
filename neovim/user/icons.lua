@@ -1,6 +1,4 @@
 return {
-  BufferClose = "",
-  DapStopped = "",
   DefaultFile = "",
   Git = "",
   Paste = "",

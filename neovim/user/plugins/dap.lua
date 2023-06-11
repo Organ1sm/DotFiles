@@ -14,7 +14,7 @@ return {
       .. "\\extension\\adapter\\codelldb"
 
     local lldb = {
-      name = "Launch",
+      name = "Launch lldb",
       type = "codelldb",
       request = "launch",
       program = function() -- First, check if exists CMakeLists.txt
@@ -45,7 +45,6 @@ return {
       type = "server",
       port = "${port}",
       executable = {
-        -- CHANGE THIS to your path!
         command = CodeLLDBDir,
         args = { "--port", "${port}" },
 
