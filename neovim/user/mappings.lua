@@ -1,10 +1,7 @@
 local get_icons = require("astronvim.utils").get_icon
 
 return {
-  -- first key is the mode
   n = {
-    -- tables with the `name` key will be registered with which-key if it's installed
-    -- this is useful for naming menus
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
@@ -16,9 +13,6 @@ return {
     },
     ["H"] = { "^" },
     ["L"] = { "$" },
-
-    -- lsp
-    ["<leader>fm"] = { "<cmd>lua vim.lsp.buf.format()<CR>" },
 
     -- windows manage
     ["sv"] = { "<cmd>vsp<cr>" },

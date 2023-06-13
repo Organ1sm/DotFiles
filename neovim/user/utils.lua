@@ -1,8 +1,24 @@
 local M = {}
 local Job = require "plenary.job"
 local scan = require "plenary.scandir"
+local OsName = vim.loop.os_uname().sysname
 
-M.isWindows = vim.fn.has "win32" == 1 or vim.fn.has "win64" == 1
+function M:loadVariables()
+  self.isWindows = OsName == "Windows_NT"
+  self.isLinux = OsName == "Linux"
+  self.isMac = OsName == "Darwin"
+  self.isWSL = vim.fn.has "wsl" == 1
+  self.pathSep = self.isWindows and "\\" or "/"
+  self.vimpath = vim.fn.stdpath "config"
+
+  local home = self.isWindows and os.getenv "USERPROFILE" or os.getenv "HOME"
+  self.cache_dir = home .. self.pathSep .. ".cache" .. self.pathSep .. "nvim" .. self.pathSep
+  self.modules_dir = self.vimpath .. self.pathSep .. "modules"
+  self.home = home
+  self.data_dir = string.format("%s/site/", vim.fn.stdpath "data")
+end
+
+M:loadVariables()
 
 function M.getBinaryPath(bin)
   local j = Job:new { command = "which", args = { bin } }
@@ -20,18 +36,6 @@ function M.getShell()
   else
     return vim.o.shell
   end
-end
-
-function M.get_files_by_end(string) --> table
-  local find = vim.fs.find(function(x) return vim.endswith(x, string) end, { type = "file", limit = math.huge })
-  local files = {}
-  if #find > 1 then
-    for _, value in ipairs(find) do
-      local name = vim.fs.basename(value)
-      table.insert(files, { tostring(name), tostring(value) })
-    end
-  end
-  return files
 end
 
 local contains = function(tbl, str)

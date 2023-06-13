@@ -9,9 +9,16 @@ return {
   },
   config = function()
     local dap = require "dap"
+    local utils = require "user.utils"
 
-    local CodeLLDBDir = require("mason-registry").get_package("codelldb"):get_install_path()
-      .. "\\extension\\adapter\\codelldb"
+    local pathSep = utils.pathSep
+    local CodelldbPath = require("mason-registry").get_package("codelldb"):get_install_path()
+      .. pathSep
+      .. "extension"
+      .. pathSep
+      .. "adapter"
+      .. pathSep
+      .. "codelldb"
 
     local lldb = {
       name = "Launch lldb",
@@ -22,7 +29,11 @@ return {
         if require("user.utils").exists(cwd, "CMakeLists.txt") then
           return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
         else
-          os.execute("mkdir " .. "bin") -- create this directory
+          if utils.isWindows then
+            os.execute("mkdir " .. "bin") -- create this directory
+          else
+            os.execute("mkdir" .. "-p" .. "bin")
+          end
 
           local fileName = vim.fn.expand "%:t:r"
           local cmd = "!g++ -g % -o bin/" .. fileName
@@ -45,7 +56,7 @@ return {
       type = "server",
       port = "${port}",
       executable = {
-        command = CodeLLDBDir,
+        command = CodelldbPath,
         args = { "--port", "${port}" },
 
         -- On windows you may have to uncomment this:
@@ -53,9 +64,7 @@ return {
       },
     }
 
-    dap.configurations.cpp = {
-      lldb,
-    }
+    dap.configurations.cpp = { lldb }
     dap.configurations.c = dap.configurations.cpp
 
     local dapui = require "dapui"

@@ -5,21 +5,17 @@ return {
     config = {
       -- choose default mode (valid term, tab, float, toggle, buf)
       mode = "term",
-      -- Focus on runner window(only works on toggle, term and tab mode)
       focus = true,
       -- startinsert (see ':h inserting-ex')
       startinsert = false,
       term = {
         --  Position to open the terminal, this option is ignored if mode is tab
         position = "bot",
-        -- window size, this option is ignored if tab is true
         size = 8,
       },
 
       float = {
-        -- Key that close the code_runner floating window
         close_key = "q",
-        -- Window border (see ':h nvim_open_win')
         border = "none",
 
         -- Num from `0 - 1` for measurements

@@ -20,7 +20,12 @@ return {
 
   {
     "echasnovski/mini.surround",
-    event = "VeryLazy",
+    event  = "VeryLazy",
+    opts   = {
+      mappings = {
+        highlight = ''
+      }
+    },
     config = true,
   },
 
