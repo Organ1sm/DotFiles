@@ -26,7 +26,7 @@ return {
       request = "launch",
       program = function() -- First, check if exists CMakeLists.txt
         local cwd = vim.fn.getcwd()
-        if require("user.utils").exists(cwd, "CMakeLists.txt") then
+        if utils.exists(cwd, "CMakeLists.txt") then
           return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
         else
           if utils.isWindows then
