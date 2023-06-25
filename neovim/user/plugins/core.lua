@@ -1,4 +1,6 @@
 return {
+  -- disable some plugin
+  { "better-escape.nvim", enabled = false },
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)

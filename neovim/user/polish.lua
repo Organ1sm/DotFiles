@@ -30,35 +30,35 @@ return function()
     callback = function() leave_snippet() end,
   })
 
-  -- fix treesitter slow on very big files
-  local cmp = require "cmp"
-  local default_cmp_sources = cmp.config.sources {
-    { name = "nvim_lsp", keyword_length = 2 },
-    { name = "luasnip", keyword_length = 2 },
-    { name = "buffer", keyword_length = 2 },
-    { name = "path", keyword_length = 2 },
-    { name = "nvim_lua", keyword_length = 2 },
-  }
-
-  local bufIsBig = function(bufnr)
-    local max_filesize = 100 * 1024 -- 100 KB
-    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(bufnr))
-    if ok and stats and stats.size > max_filesize then
-      return true
-    else
-      return false
-    end
-  end
-
-  vim.api.nvim_create_autocmd("BufReadPre", {
-    callback = function(t)
-      local sources = default_cmp_sources
-      if not bufIsBig(t.buf) then sources[#sources + 1] = { name = "treesitter", group_index = 2 } end
-      cmp.setup.buffer {
-        sources = sources,
-      }
-    end,
-  })
+  -- -- fix treesitter slow on very big files
+  -- local cmp = require "cmp"
+  -- local default_cmp_sources = cmp.config.sources {
+  --   { name = "nvim_lsp", keyword_length = 2 },
+  --   { name = "luasnip", keyword_length = 2 },
+  --   { name = "buffer", keyword_length = 2 },
+  --   { name = "path", keyword_length = 2 },
+  --   { name = "nvim_lua", keyword_length = 2 },
+  -- }
+  --
+  -- local bufIsBig = function(bufnr)
+  --   local max_filesize = 100 * 1024 -- 100 KB
+  --   local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(bufnr))
+  --   if ok and stats and stats.size > max_filesize then
+  --     return true
+  --   else
+  --     return false
+  --   end
+  -- end
+  --
+  -- vim.api.nvim_create_autocmd("BufReadPre", {
+  --   callback = function(t)
+  --     local sources = default_cmp_sources
+  --     if not bufIsBig(t.buf) then sources[#sources + 1] = { name = "treesitter", group_index = 2 } end
+  --     cmp.setup.buffer {
+  --       sources = sources,
+  --     }
+  --   end,
+  -- })
 
   -- don't auto commenting new lines
   vim.api.nvim_create_autocmd("BufEnter", {

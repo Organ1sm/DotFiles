@@ -54,10 +54,8 @@ return {
     ["<leader>cz"] = { "<cmd>CMakeClose<CR>", desc = "Close console" },
 
     -- Code Runner
-    ["<leader>r"] = { desc = get_icons("Runner", 1, true) .. "Runner" },
-    ["<leader>rc"] = { "<cmd>RunCode<cr>", desc = "Run Code" },
-    ["<leader>rf"] = { "<cmd>RunFile<cr>", desc = "Run File" },
-    ["<leader>rp"] = { "<cmd>RunProject<cr>", desc = "Run Project" },
+    ["<leader>r"] = { desc = get_icons("Runner", 1, true) .. "Runner and Refactor" },
+    ["<leader>run"] = { "<cmd>RunCode<cr>", desc = "Run Code" },
     ["<leader>rd"] = { "<cmd>RunClose<cr>", desc = "Run Close" },
 
     -- quick save
@@ -68,8 +66,6 @@ return {
     ["H"] = { "^" },
     ["L"] = { "$" },
 
-    -- Refactor
-    ["<leader>rr"] = { ":lua require('refactoring').select_refactor()<CR>", desc = "Select Refactor" },
   },
 
   t = {},
