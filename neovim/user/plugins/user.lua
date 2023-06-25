@@ -20,11 +20,11 @@ return {
 
   {
     "echasnovski/mini.surround",
-    event  = "VeryLazy",
-    opts   = {
+    event = "VeryLazy",
+    opts = {
       mappings = {
-        highlight = ''
-      }
+        highlight = "",
+      },
     },
     config = true,
   },
@@ -67,6 +67,7 @@ return {
   {
     "j-hui/fidget.nvim",
     event = "BufRead",
+    tag = "legacy",
     config = true,
   },
   {
@@ -74,4 +75,14 @@ return {
     ft = { "c", "cpp" },
     config = true,
   },
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+    config = function (_, opts)
+      require("dap-python").setup("python")
+    end
+  }
 }

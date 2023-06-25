@@ -4,7 +4,6 @@ return {
   dependencies = {
     { "rcarriga/nvim-dap-ui", config = true },
     { "theHamsta/nvim-dap-virtual-text", config = true },
-    { "mfussenegger/nvim-dap-python" },
     { "jbyuki/one-small-step-for-vimkind" },
   },
   config = function()
@@ -29,6 +28,7 @@ return {
         if utils.exists(cwd, "CMakeLists.txt") then
           return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
         else
+          vim.notify("No CMakeLists")
           if utils.isWindows then
             os.execute("mkdir " .. "bin") -- create this directory
           else
