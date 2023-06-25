@@ -3,7 +3,9 @@ return function()
     filename = {
       ["%.?zshrc"] = "sh",
     },
-    extension = {},
+    extension = {
+      ll = "llvm"
+    },
     pattern = {
       -- ["~/%.config/foo/.*"] = "fooscript",
       ["%.gitconfig.*"] = "gitconfig",
