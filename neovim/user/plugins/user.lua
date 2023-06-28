@@ -31,8 +31,8 @@ return {
 
   {
     "lewis6991/satellite.nvim",
-    event = "BufRead",
-    config = true,
+    event = "User AstroFile",
+    opts = { excluded_filetypes = { "prompt", "TelescopePrompt", "noice", "notify", "neo-tree" } },
   },
 
   {

@@ -15,7 +15,7 @@ local config = {
 	check_for_updates = false,
 	color_scheme = "MaterialDarker",
 
-	enable_scroll_bar = true,
+	enable_scroll_bar = false,
 	exit_behavior = "Close",
 
 	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "DemiBold", italic = false }),
