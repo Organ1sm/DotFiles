@@ -1,6 +1,7 @@
 return {
   {
     "folke/todo-comments.nvim",
+    lazy=true,
     event = { "BufReadPost", "BufNewFile" },
     config = true,
   },
@@ -31,6 +32,7 @@ return {
 
   {
     "lewis6991/satellite.nvim",
+    lazy = true,
     event = "User AstroFile",
     opts = { excluded_filetypes = { "prompt", "TelescopePrompt", "noice", "notify", "neo-tree" } },
   },
