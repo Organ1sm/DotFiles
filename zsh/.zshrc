@@ -1,8 +1,4 @@
 # -----------------
-# Zsh configuration
-# -----------------
-
-# -----------------
 # Zim configuration
 # -----------------
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
@@ -56,8 +52,6 @@ export PAGER="less -R"
 
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZVM_KEYTIMEOUT=0
-
-export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/config"
 
 # User configuration
 alias proxy="source ~/proxy.sh"
