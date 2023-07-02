@@ -1,7 +1,7 @@
 return {
   {
     "folke/todo-comments.nvim",
-    lazy=true,
+    lazy = true,
     event = { "BufReadPost", "BufNewFile" },
     config = true,
   },
