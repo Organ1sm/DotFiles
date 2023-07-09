@@ -139,6 +139,8 @@ alias lt="ls -T -la"
 # tmux
 alias tns='tmux new -s'
 
+alias hx='helix'
+
 # >>> xmake >>>
 test -f "/home/organ1sm/.xmake/profile" && source "/home/organ1sm/.xmake/profile"
 # <<< xmake <<<
