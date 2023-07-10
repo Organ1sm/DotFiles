@@ -2,6 +2,7 @@ theme = "onedark"
 
 [editor]
 line-number = "relative"
+cursorline = true
 mouse = true
 true-color = true
 scrolloff = 8
@@ -49,3 +50,7 @@ right = [
   "position-percentage",
 ]
 separator = "│"
+
+# space mode
+[keys.normal.space]
+"l" = { "f" = ":format"}
