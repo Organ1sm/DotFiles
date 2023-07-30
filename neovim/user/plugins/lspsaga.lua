@@ -1,13 +1,12 @@
 return {
   {
-    "glepnir/lspsaga.nvim",
-    event = "LspAttach",
+    "nvimdev/lspsaga.nvim",
     opts = {
       ui = {
         -- Border type can be single, double, rounded, solid, shadow.
         border = "rounded",
-        incoming = "󰏷 ",
-        outgoing = "󰏻 ",
+        diagnostic = "",
+        preview = "",
       },
       -- winbar config
       symbol_in_winbar = {
@@ -17,6 +16,7 @@ return {
       -- lightbulb config
       lightbulb = {
         enable_in_insert = false,
+        virtual_text = true,
       },
       -- diagnostic config
       diagnostic = {
