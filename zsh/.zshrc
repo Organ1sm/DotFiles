@@ -55,6 +55,7 @@ export ZVM_KEYTIMEOUT=0
 
 # User configuration
 alias proxy="source ~/proxy.sh"
+. ~/proxy.sh set
 [[ -n "$WT_SESSION" ]] && {
 	chpwd() {
 	    echo -en '\e]9;9;"'

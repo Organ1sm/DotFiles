@@ -1,3 +1,3 @@
 return { -- this table overrides highlights in all themes
-  -- Normal = { bg = "#000000" },
+  PmenuSel = { fg = "#1A1D23", bg = "#50A4E9", bold = true },
 }

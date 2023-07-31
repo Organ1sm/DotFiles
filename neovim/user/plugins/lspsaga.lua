@@ -1,6 +1,7 @@
 return {
   {
     "nvimdev/lspsaga.nvim",
+    ft = { "c", "cpp", "lua", "rust", "cmake", "zig", "python" },
     opts = {
       ui = {
         -- Border type can be single, double, rounded, solid, shadow.
@@ -11,6 +12,7 @@ return {
       -- winbar config
       symbol_in_winbar = {
         separator = "  ",
+        folder_level = 0,
         hide_keyword = false,
       },
       -- lightbulb config

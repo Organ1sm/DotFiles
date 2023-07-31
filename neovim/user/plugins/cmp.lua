@@ -9,6 +9,11 @@ return {
           fields = { "abbr", "menu", "kind" },
           format = lspkind_status_ok and lspkind.cmp_format(astronvim.lspkind) or nil,
         },
+        window = {
+          completion = {
+            scrollbar = false,
+          },
+        },
       })
     end,
   },

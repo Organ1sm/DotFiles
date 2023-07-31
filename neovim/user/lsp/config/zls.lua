@@ -1,5 +1,5 @@
 return {
-  cmd = { "zls", "--enable-debug-log" },
+  cmd = { "/usr/sbin/zls", "--enable-debug-log" },
   settings = {
     zls = {
       enable_inlay_hints = true,
