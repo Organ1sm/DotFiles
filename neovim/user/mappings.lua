@@ -31,9 +31,9 @@ return {
     -- LSP
     ["[e"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous diagnostic" },
     ["]e"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next diagnostic" },
-    ["gp"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
-    ["gt"] = { "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
-    ["gh"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga lsp finder" },
+    ["gt"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
+    ["gT"] = { "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
+    ["gf"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga lsp finder" },
 
     -- comment generate
     ["<leader>ng"] = { ":lua require('neogen').generate()<CR>", desc = "Comment Generate" },
