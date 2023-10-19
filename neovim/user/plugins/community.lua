@@ -4,8 +4,7 @@ return {
   -- example of imporing a plugin, comment out to use it or add your own
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
-  { import = "astrocommunity.motion.leap-nvim" },
-  { import = "astrocommunity.motion.flit-nvim" }, -- Enhanced f/t motions for Leap
+  { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.mini-bracketed", enabled = true },
 
   { import = "astrocommunity.editing-support.neogen" },

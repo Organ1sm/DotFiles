@@ -40,7 +40,7 @@ AllowShortEnumsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: All
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: All
-AllowShortLoopsOnASingleLine: true
+AllowShortLoopsOnASingleLine: false;
 AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
