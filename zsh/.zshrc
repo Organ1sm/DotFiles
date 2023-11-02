@@ -144,4 +144,5 @@ alias hx='helix'
 
 # >>> xmake >>>
 test -f "/home/organ1sm/.xmake/profile" && source "/home/organ1sm/.xmake/profile"
+alias xbr='xmake build && xmake run'
 # <<< xmake <<<
