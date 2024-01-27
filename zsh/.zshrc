@@ -40,10 +40,10 @@ eval "$(zoxide init zsh)"
 export PATH=~/.local/lib/python3.10/site-packages:$PATH
 export PATH=~/.local/bin:$PATH
 
-export FZF_ALT_C_COMMAND='command fd --type d --hidden --follow --strip-cwd-prefix --exclude .git'
-export FZF_ALT_C_OPTS="--preview 'exa -T -L 1 --group-directories-first --color=always {}'"
-export FZF_CTRL_T_COMMAND='command fd --hidden --follow --strip-cwd-prefix --exclude .git'
-export FZF_CTRL_T_OPTS="--preview 'bat --color=always {} 2> /dev/null || exa -T -L 1 --group-directories-first --color=always {}'"
+# export FZF_ALT_C_COMMAND='command fd --type d --hidden --follow --strip-cwd-prefix --exclude .git'
+# export FZF_ALT_C_OPTS="--preview 'exa -T -L 1 --group-directories-first --color=always {}'"
+# export FZF_CTRL_T_COMMAND='command fd --hidden --follow --strip-cwd-prefix --exclude .git'
+# export FZF_CTRL_T_OPTS="--preview 'bat --color=always {} 2> /dev/null || exa -T -L 1 --group-directories-first --color=always {}'"
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --exclude={.git,.idea}"
 export FZF_DEFAULT_OPTS="--bind ctrl-a:toggle-all,ctrl-b:page-up,ctrl-d:half-page-down,ctrl-f:page-down,ctrl-u:half-page-up  --reverse --tiebreak=length,end --preview 'bat --color=always {} 2> /dev/null || exa -T -L 1 --group-directories-first --color=always {} 2> /dev/null || echo {}' --preview-window 'right:60%'"
 
@@ -88,7 +88,8 @@ function zvm_after_init() {
 
   bindkey '^F' fzf-file-widget
   bindkey '^G' fzf-cd-widget
-  bindkey '^R' fzf-history-widget
+  # bindkey '^R' fzf-history-widget
+  bindkey '^r' _atuin_search_widget  
 
   bindkey '^N' history-substring-search-down
   bindkey '^P' history-substring-search-up
@@ -109,6 +110,7 @@ function zvm_after_lazy_keybindings() {
   bindkey -M vicmd 'k' history-substring-search-up
   bindkey -M vicmd 'j' history-substring-search-down
 }
+
 #  ┏━┓╻  ╻┏━┓┏━┓┏━╸┏━┓
 #  ┣━┫┃  ┃┣━┫┗━┓┣╸ ┗━┓
 #  ╹ ╹┗━╸╹╹ ╹┗━┛┗━╸┗━┛
