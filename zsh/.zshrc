@@ -53,17 +53,6 @@ export PAGER="less -R"
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZVM_KEYTIMEOUT=0
 
-# User configuration
-alias proxy="source ~/proxy.sh"
-. ~/proxy.sh set
-[[ -n "$WT_SESSION" ]] && {
-	chpwd() {
-	    echo -en '\e]9;9;"'
-	    wslpath -w "$PWD" | tr -d '\n'
-	    echo -en '"\x07'
-  }
-}
-
 
 #  ┏━╸╻ ╻┏┓╻┏━╸╺┳╸╻┏━┓┏┓╻┏━┓
 #  ┣╸ ┃ ┃┃┗┫┃   ┃ ┃┃ ┃┃┗┫┗━┓
