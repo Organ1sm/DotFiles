@@ -29,10 +29,11 @@ return {
     ["<A-m>"] = { "<cmd> Neotree toggle <CR>", desc = "Toggle File Explorer" },
 
     -- LSP
-    ["[e"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous diagnostic" },
+    ["<leader>la"] = {"<cmd>Lspsaga code_action<CR>", desc = "code action"},
+    ["[e"] = { "<cmd>spsaga diagnostic_jump_prev<CR>", desc = "Previous diagnostic" },
     ["]e"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next diagnostic" },
-    ["gt"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
-    ["gT"] = { "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
+    ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
+    ["gt"] = { "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
     ["gf"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga lsp finder" },
 
     -- comment generate

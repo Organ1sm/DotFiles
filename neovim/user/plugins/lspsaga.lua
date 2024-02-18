@@ -24,6 +24,13 @@ return {
       diagnostic = {
         text_hl_follow = false,
       },
+
+      finder = {
+        keys = {
+          vsplit = "v",
+          quit = "q",
+        },
+      },
       -- finder icons
       finder_icons = { def = "stevearc/overseer.nvim", "  ", ref = "󰵚 ", link = "󰴜 " },
       request_timeout = 3000,
