@@ -41,22 +41,32 @@ return {
     -- CMake
     ["<leader>c"] = { desc = get_icons("CMake", 1, true) .. "CMake" },
     ["<leader>cb"] = { "<cmd>CMakeBuild<CR>", desc = "Build" },
+    ["<leader>cr"] = { "<cmd>CMakeRun<CR>", desc = "Run" },
+
+    ["<leader>cg"] = { "<cmd>CMakeGenerate<CR>", desc = "Generate" },
     ["<leader>cc"] = { "<cmd>CMakeClean<CR>", desc = "Clean target" },
     ["<leader>cd"] = { "<cmd>CMakeDebug<CR>", desc = "Debug" },
-    ["<leader>cg"] = { "<cmd>CMakeGenerate<CR>", desc = "Generate" },
     ["<leader>ci"] = { "<cmd>CMakeInstall<CR>", desc = "Install targets" },
-    ["<leader>ck"] = { "<cmd>CMakeStop<CR>", desc = "Stop cmake process" },
-    ["<leader>cl"] = { "<cmd>CMakeSelectLaunchTarget<CR>", desc = "Select launch target" },
-    ["<leader>co"] = { "<cmd>CMakeOpen<CR>", desc = "Open console" },
-    ["<leader>cr"] = { "<cmd>CMakeRun<CR>", desc = "Run" },
+
     ["<leader>cs"] = { "<cmd>CMakeSelectBuildType<CR>", desc = "Select build type" },
     ["<leader>ct"] = { "<cmd>CMakeSelectBuildTarget<CR>", desc = "Select build target" },
-    ["<leader>cz"] = { "<cmd>CMakeClose<CR>", desc = "Close console" },
+    ["<leader>cl"] = { "<cmd>CMakeSelectLaunchTarget<CR>", desc = "Select launch target" },
+
+    ["<leader>coe"] = { "<cmd>CMakeOpenExecutor<CR>", desc = "Open CMake Executor" },
+    ["<leader>cec"] = { "<cmd>CMakeCloseExecutor<CR>", desc = "Close CMake Executor" },
+    ["<leader>cor"] = { "<cmd>CMakeOpenRunner<CR>", desc = "Open CMake Runner" },
+    ["<leader>crc"] = { "<cmd>CMakeCloseRunner<CR>", desc = "Close CMake Runner" },
+
+    ["<leader>cs"] = {
+      function()
+        vim.cmd [[CMakeStopRunner]]
+        vim.cmd [[CMakeStopExecutor]]
+      end,
+      desc = "Close console",
+    },
 
     -- Code Runner
     ["<leader>r"] = { desc = get_icons("Runner", 1, true) .. "Runner and Refactor" },
-    ["<leader>run"] = { "<cmd>RunCode<cr>", desc = "Run Code" },
-    ["<leader>rd"] = { "<cmd>RunClose<cr>", desc = "Run Close" },
 
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
@@ -65,7 +75,6 @@ return {
   v = {
     ["H"] = { "^" },
     ["L"] = { "$" },
-
   },
 
   t = {},
