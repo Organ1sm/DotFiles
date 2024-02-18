@@ -1,6 +1,7 @@
 return {
   -- disable some plugin
   { "better-escape.nvim", enabled = false },
+  { "lukas-reineke/indent-blankline.nvim", enabled = false },
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
