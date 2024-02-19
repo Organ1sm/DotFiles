@@ -14,6 +14,9 @@ return {
     ["H"] = { "^" },
     ["L"] = { "$" },
 
+    -- undo history
+    ["<leader>uh"] = { "<cmd>Telescope undo<cr>", desc = "Telescope undo" },
+
     -- windows manage
     ["sv"] = { "<cmd>vsp<cr>" },
     ["sh"] = { "<cmd>sp<cr>" },
@@ -29,10 +32,14 @@ return {
     ["<A-m>"] = { "<cmd> Neotree toggle <CR>", desc = "Toggle File Explorer" },
 
     -- LSP
-    ["<leader>la"] = {"<cmd>Lspsaga code_action<CR>", desc = "code action"},
-    ["[e"] = { "<cmd>spsaga diagnostic_jump_prev<CR>", desc = "Previous diagnostic" },
+    ["<leader>la"] = { "<cmd>Lspsaga code_action<CR>", desc = "code action" },
+    ["<leader>lf"] = { "<cmd>lua vim.lsp.buf.format({async=true})<CR>", desc = "Format" },
+    ["<leader>ll"] = { "<cmd>lua vim.lsp.codelens.run()<CR>", desc = "Codelens Action" },
+    ["<leader>lr"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
+    ["[e"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous diagnostic" },
     ["]e"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next diagnostic" },
-    ["gd"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
+    ["gD"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
+    ["gd"] = { "<cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
     ["gt"] = { "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
     ["gf"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga lsp finder" },
 
@@ -49,8 +56,8 @@ return {
     ["<leader>cd"] = { "<cmd>CMakeDebug<CR>", desc = "Debug" },
     ["<leader>ci"] = { "<cmd>CMakeInstall<CR>", desc = "Install targets" },
 
-    ["<leader>cs"] = { "<cmd>CMakeSelectBuildType<CR>", desc = "Select build type" },
-    ["<leader>ct"] = { "<cmd>CMakeSelectBuildTarget<CR>", desc = "Select build target" },
+    ["<leader>ct"] = { "<cmd>CMakeSelectBuildType<CR>", desc = "Select build type" },
+    ["<leader>cu"] = { "<cmd>CMakeSelectBuildTarget<CR>", desc = "Select build target" },
     ["<leader>cl"] = { "<cmd>CMakeSelectLaunchTarget<CR>", desc = "Select launch target" },
 
     ["<leader>coe"] = { "<cmd>CMakeOpenExecutor<CR>", desc = "Open CMake Executor" },
