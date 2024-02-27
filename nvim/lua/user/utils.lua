@@ -51,4 +51,16 @@ M.exists = function(dir, file_pattern)
   return contains(dirs, dir .. "/" .. file_pattern)
 end
 
+M.getClangdQueryDriver = function(binaries)
+  if M.isWindows then return "D:\\ToolChains\\LLVM-mingw\\bin\\g++" end
+
+  local path_list = {}
+  for _, binary in ipairs(binaries) do
+    local path = M.getBinaryPath(binary)
+    if path then table.insert(path_list, path) end
+  end
+
+  return table.concat(path_list, ",")
+end
+
 return M

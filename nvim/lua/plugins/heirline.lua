@@ -1,27 +1,8 @@
 return {
-  -- disable some plugin
-  { "better-escape.nvim", enabled = false },
-  { "lukas-reineke/indent-blankline.nvim", enabled = false },
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      opts.section.header.val = require "user.header"
-      return opts
-    end,
-  },
-  { "mfussenegger/nvim-dap", enabled = true },
-  {
-    "akinsho/toggleterm.nvim",
-    opts = function(_, opts)
-      return require("astronvim.utils").extend_tbl(opts, {
-        shell = require("user.utils").getShell,
-      })
-    end,
-  },
   {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
-      local status = require "astronvim.utils.status"
+      local status = require "astroui.status"
 
       opts.statusline = {
         hl = { fg = "fg", bg = "bg" },
