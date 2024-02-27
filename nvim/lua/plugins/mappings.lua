@@ -33,6 +33,7 @@ return {
           ["<leader>ng"] = { ":lua require('neogen').generate()<CR>", desc = "Comment Generate" },
 
           -- LSP
+          ["<leader>lc"] = { "<cmd>Lspsaga code_action<CR>", desc = "code action" },
           ["[e"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous diagnostic" },
           ["]e"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next diagnostic" },
           ["gD"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
@@ -94,11 +95,11 @@ return {
             desc = "Hover symbol details",
           },
           -- condition for only server with declaration capabilities
-          gD = {
-            function() vim.lsp.buf.declaration() end,
-            desc = "Declaration of current symbol",
-            cond = "textDocument/declaration",
-          },
+          -- gD = {
+          --   function() vim.lsp.buf.declaration() end,
+          --   desc = "Declaration of current symbol",
+          --   cond = "textDocument/declaration",
+          -- },
         },
       },
     },
