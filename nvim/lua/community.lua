@@ -24,6 +24,8 @@ return {
   { import = "astrocommunity.indent.mini-indentscope" },
   { import = "astrocommunity.utility.noice-nvim", enabled = true },
 
+  { import = "astrocommunity.programming-language-support.dooku-nvim" },
+
   { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.cpp" },

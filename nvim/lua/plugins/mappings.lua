@@ -34,6 +34,7 @@ return {
 
           -- LSP
           ["<leader>lc"] = { "<cmd>Lspsaga code_action<CR>", desc = "code action" },
+          ["<leader>ld"] = { "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "show buffer diagnostics" },
           ["[e"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous diagnostic" },
           ["]e"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next diagnostic" },
           ["gD"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },

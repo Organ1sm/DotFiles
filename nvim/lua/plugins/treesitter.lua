@@ -12,6 +12,7 @@ return {
       "python",
       "zig",
       "cmake",
+      "doxygen",
       -- add more arguments for adding more treesitter parsers
     })
   end,
