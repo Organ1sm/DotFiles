@@ -11,6 +11,7 @@ return {
       },
       -- winbar config
       symbol_in_winbar = {
+        show_file = false,
         separator = "  ",
         folder_level = 0,
         hide_keyword = false,
