@@ -4,16 +4,29 @@ AccessModifierOffset: -2
 
 AlignAfterOpenBracket: Align
 AlignArrayOfStructures: Left
-AlignConsecutiveAssignments: Consecutive
-AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+AlignConsecutiveBitFields:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
 AlignConsecutiveDeclarations: false
 AlignConsecutiveMacros: AcrossComments
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
+  AlignCaseColons: false
 AlignEscapedNewlines: Left
 AlignOperands: Align
-AlignTrailingComments: true
+AlignTrailingComments:
+  OverEmptyLines: 2
+  Kind: Always
 
 AllowAllArgumentsOnNextLine: false
-AllowAllParametersOfDeclarationOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortBlocksOnASingleLine: Always
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortEnumsOnASingleLine: true
@@ -34,7 +47,7 @@ BreakBeforeBraces: Custom
 BraceWrapping:
   AfterCaseLabel: false
   AfterClass: true
-  AfterControlStatement: true
+  AfterControlStatement: Always
   AfterEnum: false
   AfterFunction: true
   AfterNamespace: true
@@ -50,28 +63,29 @@ BraceWrapping:
   SplitEmptyRecord: false
   SplitEmptyNamespace: false
 
-BreakBeforeBinaryOperators: None
-BreakBeforeConceptDeclarations: true
-BreakBeforeTernaryOperators: false
+BracedInitializerIndentWidth: 2
+
+BreakAfterAttributes: Leave
+BreakArrays: false
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeConceptDeclarations: Always
+BreakBeforeInlineASMColon: OnlyMultiline
+BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeColon
 BreakInheritanceList: BeforeColon
-BreakStringLiterals: false
-ColumnLimit: 90
+BreakStringLiterals: true
+
+ColumnLimit: 98
 
 CompactNamespaces: false
-
-ConstructorInitializerIndentWidth: 4
-
+ConstructorInitializerIndentWidth: 2
 ContinuationIndentWidth: 4
-
 Cpp11BracedListStyle: true
-
 DerivePointerAlignment: false
-
 EmptyLineAfterAccessModifier: Never
 EmptyLineBeforeAccessModifier: LogicalBlock
-
 FixNamespaceComments: true
+IncludeBlocks: Regroup
 
 IndentCaseBlocks: false
 IndentCaseLabels: true
@@ -79,41 +93,70 @@ IndentExternBlock: AfterExternBlock
 IndentGotoLabels: true
 IndentPPDirectives: BeforeHash
 IndentWidth: 4
-IndentWrappedFunctionNames: true
+IndentWrappedFunctionNames: false
+IndentRequiresClause: true
 
+InsertNewlineAtEOF: true
+IntegerLiteralSeparator:
+  Binary: 4
+InsertTrailingCommas: None
+
+KeepEmptyLinesAtEOF: false
 KeepEmptyLinesAtTheStartOfBlocks: false
-
 LambdaBodyIndentation: Signature
-
-MaxEmptyLinesToKeep: 8
+MaxEmptyLinesToKeep: 3
 
 NamespaceIndentation: All
-
+PackConstructorInitializers: BinPack
 PointerAlignment: Right
-
+QualifierAlignment: Left
+ReferenceAlignment: Right
 ReflowComments: true
+RemoveSemicolon: true
+RequiresClausePosition: OwnLine
+RequiresExpressionIndentation: OuterScope
+SeparateDefinitionBlocks: Always
+SortIncludes: CaseSensitive
+SortUsingDeclarations: Lexicographic
 
-SortIncludes: false
-
-SortUsingDeclarations: true
 SpaceAfterCStyleCast: false
 SpaceAfterTemplateKeyword: true
-
 SpaceBeforeAssignmentOperators: true
 SpaceBeforeCpp11BracedList: true
 SpaceBeforeCtorInitializerColon: true
 SpaceBeforeInheritanceColon: true
-SpaceBeforeParens: ControlStatements
 SpaceBeforeRangeBasedForLoopColon: true
-SpaceInEmptyBlock: false
+SpaceInEmptyBlock: true
 SpaceInEmptyParentheses: false
 SpacesBeforeTrailingComments: 4
-SpacesInAngles: false
+SpacesInAngles: Never
 SpacesInCStyleCastParentheses: false
 SpacesInContainerLiterals: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
+SpaceAfterLogicalNot: false
+SpaceBeforeCaseColon: false
+SpaceBeforeJsonColon: true
 
-Standard: c++17
+SpaceBeforeParens: Custom
+SpaceBeforeParensOptions:
+  AfterControlStatements: true
+  AfterFunctionDeclarationName: false
+  AfterFunctionDefinitionName: false
+  AfterOverloadedOperator: true
+  AfterRequiresInClause: true
+  AfterRequiresInExpression: true
+  BeforeNonEmptyParentheses: false
+SpaceBeforeSquareBrackets: false
+SpacesInLineCommentPrefix:
+  Minimum: 1
+SpacesInParens: Custom
+SpacesInParensOptions:
+  InConditionalStatements: false
+  InCStyleCasts: false
+  InEmptyParentheses: false
+  Other: false
+
+Standard: Latest
 TabWidth: 4
 UseTab: Never
