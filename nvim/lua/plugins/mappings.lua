@@ -42,6 +42,8 @@ return {
           ["gT"] = { "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
           ["gf"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga lsp finder" },
 
+          ["<A-o>"] = { "<cmd> ClangdSwitchSourceHeader <CR>", desc = "Toggle File Explorer" },
+
           -- CMake
           ["<leader>c"] = { desc = get_icon("CMake", 1, true) .. "CMake" },
           ["<leader>cb"] = { "<cmd>CMakeBuild<CR>", desc = "Build" },
