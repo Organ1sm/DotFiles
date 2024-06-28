@@ -54,4 +54,6 @@ alias tns "tmux new -s"
 alias v "nvim"
 alias vim "nvim"
 
+alias code="/mnt/c/Users/yw/AppData/Local/Programs/Microsoft\ VS\ Code/code.exe"
+
 ~/.local/bin/mise activate fish | source
