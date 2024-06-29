@@ -36,6 +36,16 @@ if test -d $HOME/.zvm
     fish_add_path -aP $ZVM_INSTALL
 end
 
+# ----------------------------------------------
+# ----------------- Sources --------------------
+# ----------------------------------------------
+function source_aliases
+    for file in (fd . ~/.config/fish/functions -e fish)
+        source $file
+    end
+end
+
+source_aliases
 
 # ----------------------------------------------
 # ----------------- Aliases --------------------
@@ -55,5 +65,6 @@ alias v "nvim"
 alias vim "nvim"
 
 alias code="/mnt/c/Users/yw/AppData/Local/Programs/Microsoft\ VS\ Code/code.exe"
+
 
 ~/.local/bin/mise activate fish | source
