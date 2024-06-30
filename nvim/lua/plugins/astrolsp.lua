@@ -19,13 +19,9 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
-        allow_filetypes = { -- enable format on save for specified filetypes only
-          -- "go",
-        },
-        ignore_filetypes = { -- disable format on save for specified filetypes
-          -- "python",
-        },
+        enabled = true,
+        allow_filetypes = {},
+        ignore_filetypes = {},
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
@@ -37,9 +33,7 @@ return {
       -- end
     },
     -- enable servers that you already have installed without mason
-    servers = {
-      -- "pyright"
-    },
+    servers = {},
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
@@ -49,7 +43,6 @@ return {
     handlers = {
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
       -- function(server, opts) require("lspconfig")[server].setup(opts) end
-
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
@@ -79,16 +72,16 @@ return {
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
-          ["<leader>lc"] = { "<cmd>Lspsaga code_action<CR>", desc = "code action" },
-          ["<leader>ld"] = { "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "show buffer diagnostics" },
-          ["[e"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous diagnostic" },
-          ["]e"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next diagnostic" },
-          ["gD"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
-          ["gd"] = { "<cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
-          ["gT"] = { "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
-          ["gf"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga lsp finder" },
+        ["<leader>lc"] = { "<cmd>Lspsaga code_action<CR>", desc = "code action" },
+        ["<leader>ld"] = { "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "show buffer diagnostics" },
+        ["[e"] = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Previous diagnostic" },
+        ["]e"] = { "<cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next diagnostic" },
+        ["gD"] = { "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
+        ["gd"] = { "<cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
+        ["gT"] = { "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
+        ["gf"] = { "<cmd>Lspsaga finder<CR>", desc = "Lspsaga lsp finder" },
 
-          ["<A-o>"] = { "<cmd> ClangdSwitchSourceHeader <CR>", desc = "Toggle File Explorer" },
+        ["<A-o>"] = { "<cmd> ClangdSwitchSourceHeader <CR>", desc = "Toggle File Explorer" },
 
         ["<Leader>uY"] = {
           function() require("astrolsp.toggles").buffer_semantic_tokens() end,
